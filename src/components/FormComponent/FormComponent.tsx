@@ -10,7 +10,7 @@ interface FormValues {
 }
 
 interface FormComponentProps {
-  onSubmit: () => void;
+  onSubmit: (message: string) => void; // Измените тип onSubmit
 }
 
 const FormComponent: React.FC<FormComponentProps> = ({ onSubmit }) => {
@@ -19,11 +19,10 @@ const FormComponent: React.FC<FormComponentProps> = ({ onSubmit }) => {
   const onFinish = async (values: FormValues) => {
     setLoading(true);
     try {
-      const response = await axios.post("/api/contact", values);
-      message.success(response.data.message);
-      onSubmit();
+      const response = await axios.post("http://localhost:5000/api/contact", values);
+      onSubmit(response.data.message);
     } catch (error) {
-        if (axios.isAxiosError(error)) {
+      if (axios.isAxiosError(error)) {
         message.error(error.response?.data?.message || "Произошла ошибка при отправке формы.");
       } else {
         message.error("Произошла ошибка при отправке формы.");

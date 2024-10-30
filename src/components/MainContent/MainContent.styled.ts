@@ -27,7 +27,7 @@ export const Title = styled.h2`
   justify-content: center;
 `;
 export const VideoContainer = styled.div`
-  /* Стили для видео */
+ 
 `;
 
 export const TitleBox = styled.div`
