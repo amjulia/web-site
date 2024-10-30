@@ -11,13 +11,11 @@ export const HeaderContainer = styled.header`
   padding-bottom: 40px;
   width: 100%;
   background: #fff;
-  
 `;
-
 
 export const StyledLink = styled.span`
   color: #000;
-  text-decoration:none;
+  text-decoration: none;
   font-size: 24px;
   margin-right: 20px;
   font-weight: 600;

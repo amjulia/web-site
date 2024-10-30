@@ -10,7 +10,7 @@ interface FormValues {
 }
 
 interface FormComponentProps {
-  onSubmit: (message: string) => void; // Измените тип onSubmit
+  onSubmit: (message: string) => void;
 }
 
 const FormComponent: React.FC<FormComponentProps> = ({ onSubmit }) => {
@@ -22,6 +22,7 @@ const FormComponent: React.FC<FormComponentProps> = ({ onSubmit }) => {
       const response = await axios.post("http://localhost:5000/api/contact", values);
       onSubmit(response.data.message);
     } catch (error) {
+      console.error("Ошибка при отправке формы:", error);
       if (axios.isAxiosError(error)) {
         message.error(error.response?.data?.message || "Произошла ошибка при отправке формы.");
       } else {
@@ -38,21 +39,21 @@ const FormComponent: React.FC<FormComponentProps> = ({ onSubmit }) => {
         <p>Name</p>
         <Form.Item
           name="name"
-          rules={[{ required: true, message: "Пожалуйста, введите ваше имя!" }]}
+          rules={[{ required: true, message: "Введите ваше имя!" }]}
         >
           <Styles.StyledInput placeholder="Имя" />
         </Form.Item>
         <p>Email</p>
         <Form.Item
           name="email"
-          rules={[{ required: true, message: "Пожалуйста, введите ваш email!" }]}
+          rules={[{ required: true, message: "Введите ваш email!" }]}
         >
           <Styles.StyledInput placeholder="Email" />
         </Form.Item>
         <p>Message</p>
         <Form.Item
           name="message"
-          rules={[{ required: true, message: "Пожалуйста, введите ваше сообщение!" }]}
+          rules={[{ required: true, message: "Введите ваше сообщение!" }]}
         >
           <Styles.StyledTextArea placeholder="Сообщение" />
         </Form.Item>
