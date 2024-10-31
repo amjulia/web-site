@@ -44,7 +44,11 @@ export const Title = styled.h2`
   }
 `;
 
-export const VideoContainer = styled.div``;
+export const VideoContainer = styled.div`
+ width: 100%;
+  max-width: 100%;
+  display: flex; 
+  justify-content: center;`;
 
 export const TitleBox = styled.div`
   padding: 40px 30px;
