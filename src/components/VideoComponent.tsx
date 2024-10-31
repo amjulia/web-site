@@ -54,7 +54,7 @@ const VideoComponent = () => {
       height="320"
       src={src}
       title="Youtube Player"
-      frameborder="0"
+      frameBorder="0"
       allowFullScreen
     />
 </VideoContainer>
