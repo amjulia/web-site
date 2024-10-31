@@ -27,7 +27,7 @@
 
 //   return (
 //     <VideoContainer>
-//       <YouTube videoId="dQw4w9WgXcQ" opts={opts} />
+//       <YouTube videoId="M7lc1UVf-VE" opts={opts}/>
 //     </VideoContainer>
 //   );
 // };
@@ -38,21 +38,23 @@
 
 import styled from 'styled-components';
 const VideoContainer = styled.div`
-   position: relative;
-   padding-bottom: 56.25%; 
-   height: 0;
+   width:100%;
+  
+   
+   overflow: hidden; 
   `
  
 const VideoComponent = () => {
  
-  const src = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+   const src = "https://rutube.ru/play/embed/c6cc4d620b1d4338901770a44b3e82f4";
   return (
 <VideoContainer>
 <iframe
-      width="560"
-      height="315"
+      width="100%"
+      height="320"
       src={src}
       title="Youtube Player"
+      frameborder="0"
       allowFullScreen
     />
 </VideoContainer>
